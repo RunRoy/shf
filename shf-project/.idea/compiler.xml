@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-util" />
         <module name="model" />
+        <module name="service-api" />
+        <module name="service-acl" />
         <module name="web-admin" />
       </profile>
     </annotationProcessing>
