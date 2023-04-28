@@ -1,3 +1,4 @@
+com\atguigu\base\BaseController.class
 com\atguigu\util\WebUtil.class
 com\atguigu\base\BaseDao.class
 com\atguigu\base\BaseServiceImpl.class

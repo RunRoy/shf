@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c22b95be-044f-4e5a-890c-578c7ebb75c3" name="Changes" comment="搭环境" />
+    <list default="true" id="c22b95be-044f-4e5a-890c-578c7ebb75c3" name="Changes" comment="搭环境">
+      <change afterPath="$PROJECT_DIR$/common-util/src/main/java/com/atguigu/base/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/java/com/atguigu/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/java/com/atguigu/dao/AdminDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/java/com/atguigu/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/java/com/atguigu/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/resources/mapper/AdminDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/admin/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/admin/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-util/src/main/java/com/atguigu/base/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-util/src/main/java/com/atguigu/base/BaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-util/target/common-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/common-util/target/common-util-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-util/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/common-util/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-util/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/common-util/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/model/target/model-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/src/main/java/com/atguigu/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/src/main/java/com/atguigu/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/src/main/resources/mapper/RoleDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/src/main/resources/mapper/RoleDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/frame/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/frame/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/classes/com/atguigu/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/classes/com/atguigu/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/classes/mapper/RoleDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/classes/mapper/RoleDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/classes/com/atguigu/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/classes/mapper/RoleDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/classes/mapper/RoleDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/lib/common-util-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/lib/common-util-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/lib/model-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/lib/model-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/templates/frame/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-admin/target/web-admin-1.0-SNAPSHOT/WEB-INF/templates/frame/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +48,9 @@
         <option value="FxmlFile" />
         <option value="mybatis-config" />
         <option value="spring-beans.schema" />
-        <option value="mapper" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="mapper" />
         <option value="HTML File" />
       </list>
     </option>
@@ -122,6 +154,8 @@
       <workItem from="1682555341380" duration="14889000" />
       <workItem from="1682585988688" duration="17133000" />
       <workItem from="1682606456769" duration="5301000" />
+      <workItem from="1682613169683" duration="361000" />
+      <workItem from="1682641336756" duration="5507000" />
     </task>
     <servers />
   </component>

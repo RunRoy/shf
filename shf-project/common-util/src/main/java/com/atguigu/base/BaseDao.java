@@ -1,6 +1,5 @@
 package com.atguigu.base;
 
-import javax.management.relation.Role;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;

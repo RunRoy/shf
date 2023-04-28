@@ -1,5 +1,6 @@
 package com.atguigu.controller;
 
+import com.atguigu.base.BaseController;
 import com.atguigu.entity.Role;
 import com.atguigu.service.RoleService;
 import com.github.pagehelper.PageInfo;
@@ -10,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.security.Key;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 /**
@@ -22,7 +20,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/role")
-public class RoleController {
+public class RoleController extends BaseController {
 
     @Resource
     private RoleService service;
@@ -31,46 +29,6 @@ public class RoleController {
     private final static String PAGE_EDIT = "role/edit";
     private final static String PAGE_ROLE = "redirect:/role";
 
-
-    public Map<String, Object> getFilters(HttpServletRequest request) {
-        // 获取 pageName,pageSize
-        Enumeration parameterNames = request.getParameterNames();
-        Map<String, Object> filters = new HashMap<>();
-        // 判空且有下一个元素
-        while (parameterNames != null && parameterNames.hasMoreElements()) {
-            String keys = (String) parameterNames.nextElement();
-            String[] values = request.getParameterValues(keys);
-            if (keys != null && values.length != 0) {
-                if (values.length > 1) {
-                    filters.put(keys, values);
-                } else {
-                    filters.put(keys, values[0]);
-                }
-            }
-        }
-        if (!filters.containsKey("pageNum")) {
-            filters.put("pageNum", 1);
-        }
-        if (!filters.containsKey("pageSize")) {
-            filters.put("pageSize", 2);
-        }
-        return filters;
-    }
-
-
-//    /**
-//     * 查列表
-//     *
-//     * @param model
-//     * @return
-//     */
-//    @RequestMapping
-//    public String index(ModelMap model) {
-//        List<Role> roleList = service.findAll();
-//        model.addAttribute("roleList", roleList);
-//        return PAGE_INDEX;
-//    }
-
     /**
      * 查列表
      *
@@ -78,7 +36,7 @@ public class RoleController {
      * @return
      */
     @RequestMapping
-    public String index(ModelMap model,HttpServletRequest request) {
+    public String index(ModelMap model, HttpServletRequest request) {
         Map<String, Object> filters = getFilters(request);
         PageInfo<Role> page = service.findPage(filters);
         model.addAttribute("page", page);
