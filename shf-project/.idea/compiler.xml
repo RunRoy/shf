@@ -11,6 +11,7 @@
         <module name="service-api" />
         <module name="service-acl" />
         <module name="web-admin" />
+        <module name="service-house" />
       </profile>
     </annotationProcessing>
   </component>

@@ -19,6 +19,7 @@ import javax.annotation.Resource;
 @Transactional
 public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminService {
 
+
     @Resource
     AdminDao adminDao;
 
@@ -26,4 +27,7 @@ public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminSer
     protected BaseDao getEntityDao() {
         return adminDao;
     }
+
+
+
 }
