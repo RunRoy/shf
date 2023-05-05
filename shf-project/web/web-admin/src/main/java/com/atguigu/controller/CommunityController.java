@@ -32,7 +32,6 @@ public class CommunityController extends BaseController {
 
     private final static String LIST_ACTION = "redirect:/community";
 
-    private final static String PAGE_SHOW = "community/show";
     private final static String PAGE_CREATE = "community/create";
     private final static String PAGE_EDIT = "community/edit";
     private final static String PAGE_SUCCESS = "common/successPage";
@@ -86,6 +85,27 @@ public class CommunityController extends BaseController {
     @RequestMapping("/save")
     public String save(Community community){
         communityService.insert(community);
+        return PAGE_SUCCESS;
+    }
+
+    /**
+     *  跳转修改页面
+     */
+    @RequestMapping("/edit/{id}")
+    public  String edit(@PathVariable Long id,ModelMap map){
+        Community community = communityService.getById(id);
+        List<Dict> areaList = dictService.findListByDictCode("beijing");
+        map.addAttribute("community",community);
+        map.addAttribute("areaList",areaList);
+        return PAGE_EDIT;
+    }
+
+    /**
+     *  提交修改
+     */
+    @RequestMapping("/update")
+    public String update(Community community){
+        communityService.update(community);
         return PAGE_SUCCESS;
     }
 }

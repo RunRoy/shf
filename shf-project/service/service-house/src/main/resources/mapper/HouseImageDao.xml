@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.dao.HouseImageDao">
+
+    <!--根据房源id和类型查询对应的图片-->
+    <select id="findList" resultType="houseImage">
+        select *
+        from hse_house_image
+        where house_id = #{id}
+          and type = #{type} and is_deleted = 0
+    </select>
+
+</mapper>

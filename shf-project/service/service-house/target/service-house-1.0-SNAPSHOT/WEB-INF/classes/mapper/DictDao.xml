@@ -29,7 +29,7 @@
     </select>
 
     <select id="getNameById" resultType="String">
-        select *
+        select name
         from hse_dict
         where id=#{id}
     </select>

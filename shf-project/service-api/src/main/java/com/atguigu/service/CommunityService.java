@@ -13,4 +13,5 @@ import java.util.Map;
  */
 public interface CommunityService extends BaseService<Community> {
 
+
 }

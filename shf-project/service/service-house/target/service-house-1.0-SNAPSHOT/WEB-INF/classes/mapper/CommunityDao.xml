@@ -21,6 +21,14 @@
         order by id desc
     </select>
 
+    <select id="findAll" resultType="Community">
+        select *
+        from hse_community
+        where is_deleted = 0
+        order by id desc
+    </select>
+
+
     <update id="delete">
         update hse_community
         set update_time = now(),
@@ -66,5 +74,65 @@
                 #{averagePrice})
     </insert>
 
+    <select id="getById" resultType="Community">
+        select *
+        from hse_community
+        where id = #{id}
+    </select>
+
+    <update id="update">
+        update hse_community set
+        <if test="name != null">
+            name = #{name} ,
+        </if>
+        <if test="description != null">
+            description = #{description} ,
+        </if>
+        <if test="provinceId != null">
+            province_id = #{provinceId} ,
+        </if>
+        <if test="cityId != null">
+            city_id = #{cityId} ,
+        </if>
+        <if test="areaId != null">
+            area_id = #{areaId} ,
+        </if>
+        <if test="plateId != null">
+            plate_id = #{plateId} ,
+        </if>
+        <if test="address != null">
+            address = #{address} ,
+        </if>
+        <if test="longitude != null">
+            longitude = #{longitude} ,
+        </if>
+        <if test="latitude != null">
+            latitude = #{latitude} ,
+        </if>
+        <if test="buildYears != null">
+            build_years = #{buildYears} ,
+        </if>
+        <if test="propertyPrice != null">
+            property_price = #{propertyPrice} ,
+        </if>
+        <if test="propertyCompany != null">
+            property_company = #{propertyCompany} ,
+        </if>
+        <if test="developer != null">
+            developer = #{developer} ,
+        </if>
+        <if test="buildNum != null">
+            build_num = #{buildNum} ,
+        </if>
+        <if test="houseNum != null">
+            house_num = #{houseNum} ,
+        </if>
+        <if test="averagePrice != null">
+            average_price = #{averagePrice} ,
+        </if>
+        update_time = now()
+        where
+        id = #{id}
+    </update>
 
 </mapper>

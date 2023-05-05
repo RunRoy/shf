@@ -52,7 +52,6 @@ public class CommunityServiceImpl extends BaseServiceImpl<Community> implements 
     }
 
 
-
     @Override
     public PageInfo<Community> findPage(Map<String, Object> filters) {
         int pageNum = CastUtil.castInt(filters.get("pageNum"), 1);
@@ -61,12 +60,16 @@ public class CommunityServiceImpl extends BaseServiceImpl<Community> implements 
         List<Community> list = communityDao.findPage(filters);
         for (Community community : list) {
             Long areaId = community.getAreaId();
-            String areaName =  dictDao.getNameById(areaId);
             Long plateId = community.getPlateId();
+
+            String areaName =  dictDao.getNameById(areaId);
             String plateName = dictDao.getNameById(plateId);
+
             community.setAreaName(areaName);
             community.setPlateName(plateName);
         }
         return new PageInfo<Community>(list,10);
     }
+
+
 }

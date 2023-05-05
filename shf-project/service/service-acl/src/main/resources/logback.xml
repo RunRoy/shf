@@ -16,4 +16,19 @@
     <root level="DEBUG">
         <appender-ref ref="STDOUT" />
     </root>
+
+
+    <logger name="org.apache.ibatis">
+        <level value="DEBUG" />
+    </logger>
+    <logger name="java.sql">
+        <level value="DEBUG" />
+    </logger>
+    <logger name="com.atguigu.mapper">
+        <level value="DEBUG" />
+    </logger>
+    <logger name="org.springframework.jdbc.datasource">
+        <level value="DEBUG"/>
+    </logger>
+
 </configuration>
