@@ -1,12 +1,10 @@
 package com.atguigu.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.atguigu.dao.HouseBrokerDao;
 import com.atguigu.entity.Admin;
 import com.atguigu.entity.HouseBroker;
 import com.atguigu.service.AdminService;
 import com.atguigu.service.HouseBrokerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
