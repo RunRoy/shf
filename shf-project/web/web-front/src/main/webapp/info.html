@@ -32,9 +32,16 @@
   <div class="header">
     <div class="width1190">
       <div class="fl">您好，欢迎来到尚好房！</div>
-      <div class="fr">
+      <div class="fr" v-if="userInfo.nickName == ''">
         <a href="login.html">登录</a> |
         <a href="register.html">注册</a> |
+        <a href="javascript:;">加入收藏</a> |
+        <a href="javascript:;">设为首页</a>
+      </div>
+      <div class="fr" v-else>
+        <a href="javascript:;">欢迎 {{ userInfo.nickName }}</a> |
+        <a href="javascript:;" @click="logout">退出</a> |
+        <a href="follow.html">我的关注</a> |
         <a href="javascript:;">加入收藏</a> |
         <a href="javascript:;">设为首页</a>
       </div>
@@ -362,12 +369,15 @@
       houseBroker: {},
       houseImage1List: [],
       isFollow: false,
-
-      isLoad: false
+      isLoad: false,
+      userInfo: {
+        nickName: ''
+      }
     },
 
     created() {
-      this.init()
+      this.init();
+      this.login();
     },
 
     mounted () {
@@ -414,6 +424,30 @@
           that.houseImage1List = response.data.data.houseImage1List
           that.isFollow = response.data.data.isFollow
           that.isLoad = true
+        });
+      },
+      login() {
+        let userInfoString = window.localStorage.getItem("userInfo")
+        if(userInfoString != null && userInfoString != '') {
+          this.userInfo = JSON.parse(userInfoString)
+        }
+      },
+
+      logout() {
+        axios.get('/userInfo/logout').then(function (response) {
+          window.localStorage.setItem("userInfo", '')
+          window.location.href = 'index.html'
+        });
+      },
+      follow() {
+        var that = this
+        axios.get('/userFollow/auth/follow/'+this.id).then(function (response) {
+          //如果没登录，拦截器会返回208状态，跳转登录页面
+          if (response.data.code == 208) {
+            window.location.href = 'login.html?originUrl='+window.location.href
+          } else {
+            that.isFollow = true
+          }
         });
       }
     }

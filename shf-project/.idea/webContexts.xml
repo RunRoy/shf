@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/role/index.html" value="file://$PROJECT_DIR$/web-admin/src/main/webapp/WEB-INF/templates/role" />
         <entry key="file://$PROJECT_DIR$/web/web-admin/src/main/webapp/WEB-INF/templates/dict/index.html" value="file://$PROJECT_DIR$/web/web-admin/src/main/webapp/WEB-INF/templates/dict" />
+        <entry key="file://$PROJECT_DIR$/web/web-front/src/main/webapp/info.html" value="file://$PROJECT_DIR$/web/web-front/src/main/webapp" />
       </map>
     </option>
   </component>

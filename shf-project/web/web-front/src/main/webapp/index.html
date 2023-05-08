@@ -23,9 +23,16 @@
   <div class="header">
     <div class="width1190">
       <div class="fl">您好，欢迎来到尚好房！</div>
-      <div class="fr">
+      <div class="fr" v-if="userInfo.nickName == ''">
         <a href="login.html">登录</a> |
         <a href="register.html">注册</a> |
+        <a href="javascript:;">加入收藏</a> |
+        <a href="javascript:;">设为首页</a>
+      </div>
+      <div class="fr" v-else>
+        <a href="javascript:;">欢迎 {{ userInfo.nickName }}</a> |
+        <a href="javascript:;" @click="logout">退出</a> |
+        <a href="follow.html">我的关注</a> |
         <a href="javascript:;">加入收藏</a> |
         <a href="javascript:;">设为首页</a>
       </div>
@@ -236,11 +243,15 @@
         priceSort: null,
         timeSort: null,
       },
+      userInfo: {
+        nickName: ''
+      }
     },
 
     created () {
-      this.fetchDictData()
+      this.fetchDictData();
       this.fetchData(1);
+      this.login();
     },
 
     methods: {
@@ -272,6 +283,7 @@
 
       fetchData(pageNum = 1) {
         this.page.pageNum = pageNum
+        debugger
         if(pageNum < 1) pageNum = 1
 
         var that = this
@@ -340,6 +352,19 @@
         this.houseQueryVo.priceSort = null
         this.houseQueryVo.timeSort = 1
         this.fetchData(1)
+      },
+      login() {
+        let userInfoString = window.localStorage.getItem("userInfo")
+        if(userInfoString != null && userInfoString != '') {
+          this.userInfo = JSON.parse(userInfoString)
+        }
+      },
+
+      logout() {
+        axios.get('/userInfo/logout').then(function (response) {
+          window.localStorage.setItem("userInfo", '')
+          window.location.href = 'index.html'
+        });
       }
     }
   })
