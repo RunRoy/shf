@@ -25,4 +25,10 @@ public interface DictService {
      * @return
      */
     List<Dict> findListByDictCode(String dictCode);
+
+    String getNameById(Long houseTypeId);
+
+
 }
+
+

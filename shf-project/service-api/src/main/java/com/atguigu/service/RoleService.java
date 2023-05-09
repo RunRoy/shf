@@ -15,4 +15,5 @@ import java.util.Map;
 
 public interface RoleService extends BaseService<Role> {
 
+    void insertAdminAndRole(Long adminId, Long[] roleIds);
 }

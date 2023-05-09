@@ -1,18 +1,16 @@
 package com.atguigu.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.atguigu.entity.Community;
-import com.atguigu.entity.House;
-import com.atguigu.entity.HouseBroker;
-import com.atguigu.entity.HouseImage;
+import com.atguigu.entity.*;
 import com.atguigu.result.Result;
-import com.atguigu.service.CommunityService;
-import com.atguigu.service.HouseBrokerService;
-import com.atguigu.service.HouseImageService;
-import com.atguigu.service.HouseService;
+import com.atguigu.service.*;
 import com.atguigu.vo.HouseQueryVo;
 import com.atguigu.vo.HouseVo;
+import com.atguigu.vo.UserFollowVo;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,13 +35,22 @@ public class HouseController {
     @Reference
     private HouseImageService houseImageService;
 
+    @Reference
+    protected  UserFollowService userFollowService;
+
+
+
+
+
+
+
 
     /**
      * 房源列表
      *
      * @return
      */
-//获取房源
+    //获取房源
     @RequestMapping("/list/{pageNum}/{pageSize}")
     public Result findListPage(@RequestBody HouseQueryVo houseQueryVo ,
                                @PathVariable("pageNum") Integer pageNum,
@@ -64,7 +71,14 @@ public class HouseController {
         List<HouseBroker> houseBrokers = houseBrokerService.findListByHouseId(houseId);
         //获取房源图片
         List<HouseImage> houseImages = houseImageService.findList(houseId, 1);
-        Boolean isFollowd = false;
+
+        Boolean isFollow = false;
+        UserInfo userInfoId = (UserInfo) request.getSession().getAttribute("USER");
+        if (userInfoId != null) {
+            Long userId = userInfoId.getId();
+            isFollow = userFollowService.isFollow(userId, houseId);
+        }
+
         //创建一个Map
         Map map = new HashMap<>();
         map.put("house",house);
@@ -73,7 +87,7 @@ public class HouseController {
         map.put("houseImage1List",houseImages);
 
         //是否关注了该房源
-        map.put("isFollow",isFollowd);
+        map.put("isFollow",isFollow);
         return Result.ok(map);
     }
 

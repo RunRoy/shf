@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.base.BaseController;
 import com.atguigu.entity.Admin;
 import com.atguigu.service.AdminService;
+import com.atguigu.service.RoleService;
 import com.atguigu.util.QiniuUtils;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
 
@@ -36,8 +35,34 @@ public class AdminController extends BaseController {
 
     private final static String PAGE_UPLOED_SHOW = "admin/upload";
 
+
+
+    private final static String PAGE_ASSGIN_SHOW = "admin/assignShow";
+
     @Reference
-    AdminService service;
+   protected AdminService service;
+
+    @Reference
+    private RoleService roleService;
+
+    @RequestMapping("/assignRole")
+    public String assignRole(Long adminId,Long[] roleIds){
+        roleService.insertAdminAndRole(adminId,roleIds);
+        return PAGE_SUCCESS;
+    }
+
+
+    //opt.openWin('/admin/assignShow/'+id,'分配角色',550,450)
+    // 显示页面
+    @RequestMapping("/assignShow/{adminId}")
+    public String assignShow(ModelMap modelMap,@PathVariable Long adminId){
+        Map<String, Object> roleMap = service.findRoleByAdminId(adminId);
+        modelMap.addAllAttributes(roleMap);
+        modelMap.addAttribute("adminId",adminId);
+        return PAGE_ASSGIN_SHOW;
+    }
+
+
 
     /**
      * 跳转上传头像页面
@@ -75,9 +100,6 @@ public class AdminController extends BaseController {
         }
         return "";
     }
-
-
-
 
     @RequestMapping
     public String index(ModelMap model, HttpServletRequest request) {
