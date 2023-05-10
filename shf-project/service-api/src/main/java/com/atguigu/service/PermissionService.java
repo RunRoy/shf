@@ -20,5 +20,7 @@ public interface PermissionService extends BaseService<Permission> {
     //菜单
     List<Permission> findAllMenu();
 
+    // 获取用户功能权限
+    List<String> findCodeListByAdminId(Long adminId);
 
 }

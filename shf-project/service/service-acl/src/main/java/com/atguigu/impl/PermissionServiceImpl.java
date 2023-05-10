@@ -95,4 +95,15 @@ public class PermissionServiceImpl extends BaseServiceImpl<Permission> implement
         List<Permission> result = PermissionHelper.bulid(permissionList);
         return result;
     }
+
+    @Override
+    public List<String> findCodeListByAdminId(Long adminId) {
+        // 判断是否是超级管理员
+        if (adminId.intValue() == 1) {
+            // 获取所有权限
+            return permissionDao.findAllCodeList();
+        }
+        //根据管理员的id查询操作权限
+        return permissionDao.findCodeListByAdminId(adminId);
+    }
 }

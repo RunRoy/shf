@@ -14,4 +14,7 @@ import java.util.Map;
 public interface AdminService extends BaseService<Admin> {
 
 
-    Map<String, Object> findRoleByAdminId(Long adminId);}
+    Map<String, Object> findRoleByAdminId(Long adminId);
+
+    Admin getByUsername(String username);
+}

@@ -7,6 +7,8 @@ import com.atguigu.service.AdminService;
 import com.atguigu.service.RoleService;
 import com.atguigu.util.QiniuUtils;
 import com.github.pagehelper.PageInfo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,18 +38,18 @@ public class AdminController extends BaseController {
     private final static String PAGE_UPLOED_SHOW = "admin/upload";
 
 
-
     private final static String PAGE_ASSGIN_SHOW = "admin/assignShow";
 
     @Reference
-   protected AdminService service;
+    protected AdminService service;
 
     @Reference
     private RoleService roleService;
 
+
     @RequestMapping("/assignRole")
-    public String assignRole(Long adminId,Long[] roleIds){
-        roleService.insertAdminAndRole(adminId,roleIds);
+    public String assignRole(Long adminId, Long[] roleIds) {
+        roleService.insertAdminAndRole(adminId, roleIds);
         return PAGE_SUCCESS;
     }
 
@@ -55,47 +57,48 @@ public class AdminController extends BaseController {
     //opt.openWin('/admin/assignShow/'+id,'分配角色',550,450)
     // 显示页面
     @RequestMapping("/assignShow/{adminId}")
-    public String assignShow(ModelMap modelMap,@PathVariable Long adminId){
+    public String assignShow(ModelMap modelMap, @PathVariable Long adminId) {
         Map<String, Object> roleMap = service.findRoleByAdminId(adminId);
         modelMap.addAllAttributes(roleMap);
-        modelMap.addAttribute("adminId",adminId);
+        modelMap.addAttribute("adminId", adminId);
         return PAGE_ASSGIN_SHOW;
     }
 
 
-
     /**
      * 跳转上传头像页面
+     *
      * @param map
      * @param id
      * @return
      */
     @RequestMapping("/uploadShow/{id}")
-    public String  uploadShow(ModelMap map,@PathVariable Long id){
-        map.addAttribute("id",id);
+    public String uploadShow(ModelMap map, @PathVariable Long id) {
+        map.addAttribute("id", id);
         return PAGE_UPLOED_SHOW;
     }
 
     /**
      * 提交上传头像
+     *
      * @param
      * @param request
      * @return
      */
     ///admin/upload/{id}(id=${id})
     @RequestMapping("/upload/{id}")
-    public String upload(@PathVariable Long id, @RequestParam(value = "file") MultipartFile file, HttpServletRequest request)   {
+    public String upload(@PathVariable Long id, @RequestParam(value = "file") MultipartFile file, HttpServletRequest request) {
         try {
-        String newName = UUID.randomUUID().toString();
-        QiniuUtils.upload2Qiniu(file.getBytes(),newName);
+            String newName = UUID.randomUUID().toString();
+            QiniuUtils.upload2Qiniu(file.getBytes(), newName);
 
-        String url = "http://ru7w8odka.hn-bkt.clouddn.com/" + newName;
-        Admin admin = new Admin();
-        admin.setId(id);
-        admin.setHeadUrl(url);
-        service.update(admin);
-        return PAGE_SUCCESS;
-        }catch (Exception e){
+            String url = "http://ru7w8odka.hn-bkt.clouddn.com/" + newName;
+            Admin admin = new Admin();
+            admin.setId(id);
+            admin.setHeadUrl(url);
+            service.update(admin);
+            return PAGE_SUCCESS;
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return "";
@@ -111,31 +114,37 @@ public class AdminController extends BaseController {
     }
 
     @RequestMapping("/create")
-    public String create(ModelMap modelMap){
+    public String create(ModelMap modelMap) {
         return PAGE_CREATE;
     }
 
-     @RequestMapping("/save")
-    public String save(Admin admin){
+
+    @RequestMapping("/save")
+    public String save(Admin admin) {
+        // 对密码进行加密
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encode = encoder.encode(admin.getPassword());
+        admin.setPassword(encode);
+//        admin.setPassword(encoder.encode(admin.getPassword()));
         service.insert(admin);
         return PAGE_SUCCESS;
     }
 
     @RequestMapping("/edit/{id}")
-    public String edit(@PathVariable Long id, ModelMap modelMap){
+    public String edit(@PathVariable Long id, ModelMap modelMap) {
         Admin admin = service.getById(id);
         modelMap.addAttribute(admin);
         return PAGE_EDIT;
     }
 
     @RequestMapping("/update")
-    public  String update(Admin admin){
+    public String update(Admin admin) {
         service.update(admin);
         return PAGE_SUCCESS;
     }
 
     @RequestMapping("/delete/{id}")
-    public String delete(@PathVariable Long id,ModelMap modelMap){
+    public String delete(@PathVariable Long id, ModelMap modelMap) {
         service.delete(id);
         return LIST_ACTION;
     }

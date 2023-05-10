@@ -6,6 +6,7 @@ import com.atguigu.entity.Role;
 import com.atguigu.service.PermissionService;
 import com.atguigu.service.RoleService;
 import com.github.pagehelper.PageInfo;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,9 +45,10 @@ public class RoleController extends BaseController {
      * 保存权限
      * th:action="@{/role/assignPermission}"
      */
+    @PreAuthorize("hasAuthority('role.assgin')")
     @RequestMapping("/assignPermission")
-    public String assignPermission(Long[] permissionIds,Long roleId){
-        permissionService.insertRoleAndPermission(permissionIds,roleId);
+    public String assignPermission(Long[] permissionIds, Long roleId) {
+        permissionService.insertRoleAndPermission(permissionIds, roleId);
         return PAGE_SUCCESS;
     }
 
@@ -55,18 +57,15 @@ public class RoleController extends BaseController {
      * 显示权限页面
      * opt.openWin("/role/assignShow/"+id,'修改',580,430);
      */
+    @PreAuthorize("hasAuthority('role.assgin')")
     @RequestMapping("/assignShow/{roleId}")
-    public String assignShow(@PathVariable Long roleId,ModelMap modelMap){
+    public String assignShow(@PathVariable Long roleId, ModelMap modelMap) {
         // 根据角色id，查询用户所有的权限
-        List<Map<String,Object>> zNodes = permissionService.findPermissionByRoleId(roleId);
-        modelMap.addAttribute("zNodes",zNodes);
-        modelMap.addAttribute("roleId",roleId);
-
-
+        List<Map<String, Object>> zNodes = permissionService.findPermissionByRoleId(roleId);
+        modelMap.addAttribute("zNodes", zNodes);
+        modelMap.addAttribute("roleId", roleId);
         return PAGE_ASSGIN_SHOW;
     }
-
-
 
 
     /**
@@ -75,6 +74,7 @@ public class RoleController extends BaseController {
      * @param model
      * @return
      */
+    @PreAuthorize("hasAuthority('role.show')")
     @RequestMapping
     public String index(ModelMap model, HttpServletRequest request) {
         Map<String, Object> filters = getFilters(request);
@@ -89,6 +89,7 @@ public class RoleController extends BaseController {
      *
      * @return
      */
+    @PreAuthorize("hasAuthority('role.create')")
     @RequestMapping("/create")
     public String create(ModelMap model) {
         return PAGE_CREATE;
@@ -100,6 +101,7 @@ public class RoleController extends BaseController {
      * @param role
      * @return
      */
+    @PreAuthorize("hasAuthority('role.create2')")
     @RequestMapping("/save")
     public String save(Role role, ModelMap modelMap) {
         service.insert(role);
@@ -109,6 +111,7 @@ public class RoleController extends BaseController {
     /**
      * 根据id查询数据
      */
+    @PreAuthorize("hasAuthority('role.edit')")
     @RequestMapping("/edit/{id}")
     public String edit(ModelMap modelMap, @PathVariable Long id) {
         Role role = service.getById(id);
@@ -119,6 +122,7 @@ public class RoleController extends BaseController {
     /**
      * 提交修改表单
      */
+    @PreAuthorize("hasAuthority('role.edit')")
     @RequestMapping("/update")
     public String update(Role role) {
         service.update(role);
@@ -128,6 +132,7 @@ public class RoleController extends BaseController {
     /**
      * 删除
      */
+    @PreAuthorize("hasAuthority('role.delete')")
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
         service.delete(id);

@@ -16,7 +16,7 @@
     <import resource="spring-registry.xml"></import>
 
     <!--包扫描-->
-    <context:component-scan base-package="com.atguigu.controller" />
+    <context:component-scan base-package="com.atguigu" />
 
     <!-- 没有匹配上的url全部按默认方式（就是直接访问）访问，避免拦截静态资源 -->
     <mvc:default-servlet-handler/>
@@ -57,11 +57,29 @@
         <!--设置模板引擎-->
         <property name="templateEngine" ref="templateEngine"/>
     </bean>
+
+<!--    &lt;!&ndash;配置模板引擎&ndash;&gt;-->
+<!--    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">-->
+<!--        &lt;!&ndash;引用视图解析器&ndash;&gt;-->
+<!--        <property name="templateResolver" ref="templateResolver"></property>-->
+<!--    </bean>-->
+
+
     <!--配置模板引擎-->
     <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
         <!--引用视图解析器-->
         <property name="templateResolver" ref="templateResolver"></property>
+        <!-- 添加spring security 标签支持：sec -->
+        <property name="additionalDialects">
+            <set>
+                <bean class="org.thymeleaf.extras.springsecurity5.dialect.SpringSecurityDialect" />
+            </set>
+        </property>
     </bean>
+
+
+
+
 
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

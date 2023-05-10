@@ -71,4 +71,9 @@ public class AdminServiceImpl extends BaseServiceImpl<Admin> implements AdminSer
 
         return map;
     }
+
+    @Override
+    public Admin getByUsername(String username) {
+        return adminDao.getByUsername(username);
+    }
 }

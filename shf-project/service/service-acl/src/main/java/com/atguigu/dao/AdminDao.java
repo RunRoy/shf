@@ -13,4 +13,5 @@ import java.util.Map;
 public interface AdminDao extends BaseDao<Admin> {
 
 
+    Admin getByUsername(String username);
 }
