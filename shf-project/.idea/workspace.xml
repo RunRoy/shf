@@ -8,9 +8,13 @@
       <change afterPath="$PROJECT_DIR$/../../Spring-Security/src/main/resources/spring-security.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Spring-Security/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring-boot/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/Hello.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/boot/MainApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/boot/bean/Book.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/boot/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/resources/Test.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/resources/qiang.jpj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +40,12 @@
       <list>
         <option value="LY" />
       </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="SYNC" />
@@ -70,7 +80,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "12776fa8dc57922ecc7247e5390240bd"
   },
   "keyToStringList": {
@@ -264,6 +274,7 @@
       <workItem from="1683678017576" duration="1213000" />
       <workItem from="1683690130739" duration="21166000" />
       <workItem from="1683725092125" duration="337000" />
+      <workItem from="1683885866993" duration="1153000" />
     </task>
     <servers />
   </component>
