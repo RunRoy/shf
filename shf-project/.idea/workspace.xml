@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c22b95be-044f-4e5a-890c-578c7ebb75c3" name="Changes" comment="搭环境">
-      <change afterPath="$PROJECT_DIR$/../../Spring-Security/src/main/resources/spring-security.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Spring-Security/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/Hello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/boot/MainApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/boot/bean/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/java/com/atguigu/boot/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/resources/Test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../spring-boot/src/main/resources/qiang.jpj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/06483aa6-847e-4fe4-b85d-c452776307b2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06483aa6-847e-4fe4-b85d-c452776307b2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +41,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
+  <component name="GiteeDefaultAccount">
+    <option name="defaultAccountId" value="7478d392-4ead-48c8-8ba7-257bd79cdbdd" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,32 +57,35 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2OwvhHDnep2PFT3LeRJj4UGUGOI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "F:/workspace_idea/shf-project/shf-project/service/service-user/src/main/resources",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "12776fa8dc57922ecc7247e5390240bd"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/workspace_idea&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.gitee.ui.GiteeSettingsConfigurable&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;12776fa8dc57922ecc7247e5390240bd&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.atguigu.dao" />
@@ -274,7 +271,14 @@
       <workItem from="1683678017576" duration="1213000" />
       <workItem from="1683690130739" duration="21166000" />
       <workItem from="1683725092125" duration="337000" />
-      <workItem from="1683885866993" duration="1153000" />
+      <workItem from="1683885866993" duration="3557000" />
+      <workItem from="1684043535910" duration="22000" />
+      <workItem from="1684043618154" duration="22000" />
+      <workItem from="1684109882187" duration="24000" />
+      <workItem from="1684126520827" duration="178000" />
+      <workItem from="1684326648779" duration="662000" />
+      <workItem from="1684808472342" duration="328000" />
+      <workItem from="1685003354510" duration="1000" />
     </task>
     <servers />
   </component>
