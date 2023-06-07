@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c22b95be-044f-4e5a-890c-578c7ebb75c3" name="Changes" comment="搭环境">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/06483aa6-847e-4fe4-b85d-c452776307b2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06483aa6-847e-4fe4-b85d-c452776307b2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c22b95be-044f-4e5a-890c-578c7ebb75c3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -279,7 +276,16 @@
       <workItem from="1684326648779" duration="662000" />
       <workItem from="1684808472342" duration="328000" />
       <workItem from="1685003354510" duration="1000" />
+      <workItem from="1686098141690" duration="909000" />
     </task>
+    <task id="LOCAL-00001" summary="2023/6/7">
+      <created>1686099043743</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686099043743</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +304,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="搭环境" />
-    <option name="LAST_COMMIT_MESSAGE" value="搭环境" />
+    <MESSAGE value="2023/6/7" />
+    <option name="LAST_COMMIT_MESSAGE" value="2023/6/7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
